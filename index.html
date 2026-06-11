@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+        <script>
+        function backToMenu() {
+            window.location.href = '../dashboard/dashboard.html';
+        }
+        </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pengukuran Kebisingan</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+</head>
+<body>
+    <button id="backBtn" onclick="backToMenu()" style="display:none;">&larr; Kembali</button>
+
+
+    <div class="container">
+        <!-- Tiga logo atas: kiri (IH), tengah (GN), kanan (HSE) -->
+        <div class="top-logos">
+            <img src="gnilogo.png" alt="GNI" class="top-logo left-logo">
+            <img src="hselogo.png" alt="HSE" class="top-logo right-logo">
+
+        </div>
+
+        <h2>Pengukuran Hari Ini</h2>
+        <div class="form-group">
+            <input type="text" id="lokasiInput" placeholder="Isi Lokasi..." required>
+            <input type="time" id="jamInput" required>
+            <div class="durasi-wrapper">
+                <label for="durasiSelect">Durasi Jam Kerja:</label>
+                <select id="durasiSelect">
+                <option value="8">8 jam (NAB 85 dBA)</option>
+                <option value="4">4 jam (NAB 88 dBA)</option>
+                <option value="2">2 jam (NAB 91 dBA)</option>
+                <option value="1">1 jam (NAB 94 dBA)</option>
+                <option value="0.5">30 menit (NAB 97 dBA)</option>
+                <option value="0.25">15 menit (NAB 100 dBA)</option>
+                <option value="0.125">7,5 menit (NAB 103 dBA)</option>
+                <option value="0.0625">3,75 menit (NAB 106 dBA)</option>
+                <option value="0.03125">1,88 menit (NAB 109 dBA)</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="input-group">
+            <form id="myForm">
+                <input type="text" id="myInput" placeholder="Ketik dBA..." required>
+                <button type="submit">Simpan</button>
+            </form>
+        </div>
+
+
+        
+        <p class="info-text">*klik tabel untuk edit angka</p>
+        
+        <table id="dataTable">
+            <tr>
+                <td id="cell1" class="editable-cell">-</td>
+                <td id="cell2" class="editable-cell">-</td>
+                <td id="cell3" class="editable-cell">-</td>
+                <td id="cell4" class="editable-cell">-</td>
+                <td id="cell5" class="editable-cell">-</td>
+            </tr>
+            <tr>
+                <td id="cell6" class="editable-cell">-</td>
+                <td id="cell7" class="editable-cell">-</td>
+                <td id="cell8" class="editable-cell">-</td>
+                <td id="cell9" class="editable-cell">-</td>
+                <td id="cell10" class="editable-cell">-</td>
+            </tr>
+        </table>
+        
+        <div id="resultDiv" class="result-div" style="display: none;">
+            <div class="result-container">
+                <div>
+                    <h3>Hasil Rata-rata</h3>
+                    <p id="averageResult"></p>
+                </div>
+                <div id="warningNote" class="warning-note" style="display: none;">
+                    Nilai kebisingan melebihi NAB
+                </div>
+            </div>
+            <div class="catatan-group" style="margin-top: 15px;">
+                <label style="display: block; margin-bottom: 5px; font-weight: bold;">Catatan:</label>
+                <textarea id="catatanInput" placeholder="Tambahkan catatan pengukuran..." rows="3" style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 8px; font-family: Arial, sans-serif; resize: vertical;"></textarea>
+            </div>
+
+
+            <button id="exportBtn" class="export-btn">📥 Export ke Excel</button>
+            <button id="exportPdfBtn" class="export-btn">🧾 Unduh PDF</button>
+
+            <div style="width:100%; margin-top:10px;">
+                <button id="resetBtn" class="reset-btn" style="width:100%;">🔄 Ulang Pengukuran</button>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+
+

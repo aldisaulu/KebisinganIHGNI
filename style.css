@@ -1,0 +1,704 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f4f4f9;
+    padding: 10px;
+}
+
+.container {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    text-align: center;
+    width: 100%;
+    max-width: 600px;
+}
+
+/* Layout 3 logo di bagian atas */
+.top-logos {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.top-logo {
+    height: auto;
+    width: auto;
+    object-fit: contain;
+}
+
+/* gambar kiri (GNI) - lebar x tinggi: 20mm x 20mm (lebar +2mm) */
+.left-logo {
+    margin-right: auto;
+    width: 180px;
+    height: 60px;
+    padding-left: 1px;
+}
+
+/* gambar kanan (HSE) - lebar x tinggi: 11mm x 13mm (lebar +2mm) */
+.right-logo {
+    margin-left: auto;
+    width: 180px;
+    height: 60px;
+}
+
+
+
+.center-logo {
+    margin: 0 auto;
+}
+
+.right-logo {
+    margin-left: auto;
+}
+
+
+/* opsional: posisi spesifik */
+.left-logo {
+    margin-right: auto;
+}
+
+.center-logo {
+    margin: 0 auto;
+}
+
+.right-logo {
+    margin-left: auto;
+}
+
+
+h2 {
+    margin-top: 0;
+    font-size: 24px;
+}
+
+.input-group {
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: center;
+}
+
+.input-group form {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.form-group input[type="text"],
+.form-group input[type="time"] {
+    width: 100%;
+    max-width: 300px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+
+.form-group input[type="text"] {
+    max-width: 300px;
+}
+
+.form-group input[type="time"] {
+    max-width: 300px;
+}
+
+.durasi-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    align-items: flex-start;
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+}
+
+.durasi-wrapper label {
+    font-size: 12px;
+    color: #333;
+    font-weight: 700;
+}
+
+.durasi-wrapper select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+
+.info-text {
+    color: #666;
+    font-size: 12px;
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
+
+
+input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%;
+    max-width: 200px;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+
+button {
+    padding: 10px 15px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-left: 10px;
+    font-size: 14px;
+}
+
+button:hover {
+    background-color: #218838;
+}
+
+table {
+    margin-top: 2rem;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td {
+    border: 1px solid #333;
+    padding: 15px;
+    text-align: center;
+    font-weight: bold;
+    width: 20%;
+    font-size: 16px;
+}
+
+.editable-cell {
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.editable-cell:hover {
+    background-color: #f0f0f0;
+}
+
+.edit-input {
+    width: 100%;
+    padding: 5px;
+    border: 2px solid #28a745;
+    border-radius: 3px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.result-div {
+    margin-top: 2rem;
+    padding: 1rem;
+    background-color: #e8f5e9;
+    border-radius: 4px;
+    border: 2px solid #4caf50;
+}
+
+.result-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1rem;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.catatan-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 400px;
+    margin: 15px auto 0 auto;
+}
+
+.catatan-group textarea {
+    width: 100%;
+}
+
+.result-div h3 {
+    margin-top: 0;
+    color: #2e7d32;
+    font-size: 18px;
+}
+
+#averageResult {
+    font-size: 32px;
+    font-weight: bold;
+    color: #1b5e20;
+    margin: 0 0 1rem 0;
+}
+
+#averageResult.high-value {
+    color: #d32f2f;
+}
+
+.warning-note {
+    font-size: 12px;
+    color: #d32f2f;
+    font-weight: 600;
+    line-height: 1.4;
+    padding: 0.5rem 0.75rem;
+    background-color: #ffebee;
+    border-left: 3px solid #d32f2f;
+    border-radius: 2px;
+    max-width: 120px;
+    text-align: left;
+}
+
+.export-btn {
+    padding: 12px 20px;
+    background-color: #2196F3;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    margin-left: 0;
+    margin-right: 5px;
+    font-weight: bold;
+}
+
+.export-btn:hover {
+    background-color: #0b7dda;
+}
+
+.reset-btn {
+    padding: 12px 20px;
+    background-color: #f44336;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    margin-left: 0;
+    font-weight: bold;
+}
+
+.reset-btn:hover {
+    background-color: #da190b;
+}
+
+/* Tombol Kembali - responsif */
+#backBtn{
+    position: fixed;
+    top: 14px;
+    left: 14px;
+    z-index: 100;
+    padding: 8px 14px;
+    border-radius: 10px;
+    border: none;
+    background: #185a9d;
+    color: #fff;
+    font-weight: 700;
+    cursor: pointer;
+    touch-action: manipulation;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+    line-height: 1;
+}
+
+#backBtn:active{
+    transform: translateY(1px);
+}
+
+/* TABLET (768px - 1024px) */
+@media (max-width: 1024px) {
+    .container {
+        padding: 1.5rem;
+        max-width: 95%;
+    }
+    
+    h2 {
+        font-size: 22px;
+    }
+    
+    .top-logo {
+        height: 30px;
+    }
+    
+    .left-logo {
+        height: 45px;
+    }
+    
+    td {
+        padding: 10px 8px;
+        font-size: 14px;
+    }
+    
+    #averageResult {
+        font-size: 28px;
+    }
+    
+    .export-btn, .reset-btn {
+        padding: 10px 16px;
+        font-size: 13px;
+    }
+    
+    .catatan-group {
+        max-width: 350px;
+    }
+}
+
+/* MOBILE (480px - 767px) */
+@media (max-width: 767px) {
+    body {
+        padding: 8px;
+        align-items: flex-start;
+    }
+    
+    .container {
+        padding: 1rem;
+        max-width: 100%;
+        border-radius: 12px;
+    }
+    
+    /* Logo adjustment for mobile */
+    .top-logos {
+        justify-content: center;
+        gap: 10px;
+    }
+    
+    .top-logo {
+        height: 28px;
+    }
+    
+    .left-logo {
+        height: 40px;
+        margin-right: 0;
+    }
+    
+    .right-logo {
+        margin-left: 0;
+    }
+    
+    h2 {
+        font-size: 18px;
+        margin-bottom: 1rem;
+    }
+    
+    .form-group {
+        gap: 10px;
+    }
+    
+    .form-group input[type="text"],
+    .form-group input[type="time"] {
+        max-width: 100%;
+        font-size: 14px;
+    }
+    
+    .durasi-wrapper {
+        max-width: 100%;
+    }
+    
+    .durasi-wrapper label {
+        font-size: 13px;
+    }
+    
+    .durasi-wrapper select {
+        font-size: 13px;
+        padding: 8px;
+    }
+    
+    input {
+        width: 100%;
+        max-width: 100%;
+        padding: 10px;
+        font-size: 14px;
+    }
+    
+    .input-group form {
+        flex-direction: column;
+        width: 100%;
+    }
+    
+    .input-group form input {
+        max-width: 100%;
+    }
+    
+    button {
+        padding: 10px 16px;
+        margin-left: 0;
+        margin-top: 5px;
+        font-size: 14px;
+        width: 100%;
+        max-width: 200px;
+    }
+    
+    .input-group button {
+        width: 100%;
+        max-width: 100%;
+    }
+    
+    table {
+        margin-top: 1.5rem;
+        font-size: 14px;
+    }
+    
+    td {
+        padding: 8px 4px;
+        font-size: 13px;
+        border: 1px solid #999;
+        width: 20%;
+    }
+    
+    .result-div {
+        margin-top: 1.5rem;
+        padding: 1rem;
+    }
+    
+    .result-container {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .result-div h3 {
+        font-size: 16px;
+        margin: 0 0 0.5rem 0;
+    }
+    
+    #averageResult {
+        font-size: 24px;
+    }
+    
+    .warning-note {
+        max-width: 100%;
+        text-align: center;
+    }
+    
+    .export-btn, .reset-btn {
+        padding: 12px 16px;
+        font-size: 14px;
+        margin-right: 0;
+        margin-bottom: 8px;
+    }
+    
+    .catatan-group {
+        max-width: 100%;
+    }
+    
+    .catatan-group textarea {
+        font-size: 14px;
+        padding: 8px;
+    }
+}
+
+/* SMARTPHONE (kurang dari 480px) */
+@media (max-width: 480px) {
+    body {
+        padding: 5px;
+        min-height: auto;
+    }
+    
+    .container {
+        padding: 0.8rem;
+        max-width: 100%;
+        border-radius: 10px;
+    }
+    
+    /* Logo adjustment for small screens */
+    .top-logos {
+        gap: 5px;
+        margin-bottom: 8px;
+    }
+    
+    .top-logo {
+        height: 24px;
+    }
+    
+    .left-logo {
+        height: 35px;
+    }
+    
+    h2 {
+        font-size: 16px;
+        margin-bottom: 0.8rem;
+    }
+    
+    .form-group {
+        gap: 8px;
+        margin-bottom: 12px;
+    }
+    
+    .form-group input[type="text"],
+    .form-group input[type="time"] {
+        padding: 10px;
+        font-size: 14px;
+    }
+    
+    .durasi-wrapper {
+        gap: 4px;
+    }
+    
+    .durasi-wrapper label {
+        font-size: 12px;
+    }
+    
+    .durasi-wrapper select {
+        padding: 10px;
+        font-size: 13px;
+    }
+    
+    input {
+        width: 100%;
+        max-width: 100%;
+        padding: 10px;
+        font-size: 14px;
+        border-radius: 8px;
+    }
+    
+    .input-group form {
+        flex-direction: column;
+        gap: 8px;
+    }
+    
+    .input-group form input,
+    .input-group form button {
+        width: 100%;
+        max-width: 100%;
+    }
+    
+    button {
+        padding: 10px 14px;
+        margin-left: 0;
+        margin-top: 5px;
+        font-size: 13px;
+        width: 100%;
+        max-width: 100%;
+        border-radius: 8px;
+    }
+    
+    table {
+        margin-top: 1rem;
+        font-size: 12px;
+    }
+    
+    td {
+        padding: 6px 2px;
+        font-size: 11px;
+        border: 1px solid #999;
+    }
+    
+    .info-text {
+        font-size: 11px;
+        margin-top: 8px;
+        margin-bottom: 10px;
+    }
+    
+    .result-div {
+        margin-top: 1rem;
+        padding: 0.8rem;
+        border-radius: 8px;
+    }
+    
+    .result-div h3 {
+        font-size: 14px;
+        margin: 0 0 0.5rem 0;
+    }
+    
+    #averageResult {
+        font-size: 20px;
+        margin: 0 0 0.8rem 0;
+    }
+    
+    .warning-note {
+        font-size: 11px;
+        padding: 0.4rem 0.6rem;
+    }
+    
+    .export-btn, .reset-btn {
+        padding: 12px 14px;
+        font-size: 13px;
+        margin-bottom: 6px;
+        width: 100%;
+        max-width: 100%;
+    }
+    
+    .catatan-group {
+        max-width: 100%;
+    }
+    
+    .catatan-group textarea {
+        font-size: 13px;
+        padding: 8px;
+        border-radius: 8px;
+    }
+    
+    .catatan-group label {
+        font-size: 13px;
+    }
+}
+
+/* Extra small devices (less than 360px) */
+@media (max-width: 360px) {
+    .container {
+        padding: 0.6rem;
+    }
+    
+    h2 {
+        font-size: 15px;
+    }
+    
+    .top-logo {
+        height: 22px;
+    }
+    
+    .left-logo {
+        height: 30px;
+    }
+    
+    td {
+        padding: 5px 1px;
+        font-size: 10px;
+    }
+    
+    #averageResult {
+        font-size: 18px;
+    }
+    
+    button {
+        padding: 10px 12px;
+        font-size: 12px;
+    }
+}
+
+/* Landscape mode adjustments for mobile */
+@media (max-width: 767px) and (orientation: landscape) {
+    body {
+        padding: 10px;
+    }
+    
+    .container {
+        padding: 1rem;
+    }
+    
+    table {
+        margin-top: 1rem;
+    }
+    
+    td {
+        padding: 6px 4px;
+    }
+}
